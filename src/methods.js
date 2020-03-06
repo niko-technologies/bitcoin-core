@@ -653,6 +653,9 @@ export default {
   },
   sendRawTransaction: {
     category: 'rawtransactions',
+    features: {
+      multiwallet: '>=0.17.0'
+    },
     version: '>=0.7.0'
   },
   sendToAddress: {

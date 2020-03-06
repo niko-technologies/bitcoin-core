@@ -43,8 +43,8 @@
     "standard-error": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.32",
-    "@babel/core": "7.0.0-beta.32",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
     "@babel/plugin-transform-async-to-generator": "7.0.0-beta.32",
     "@babel/polyfill": "7.0.0-beta.32",
     "@babel/preset-env": "7.0.0-beta.32",
