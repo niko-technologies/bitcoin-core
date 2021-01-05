@@ -101,7 +101,11 @@ function obfuscateRequest(request) {
     return;
   }
 
-  request.body = JSON.parse(request.body);
+  try {
+    request.body = JSON.parse(request.body);
+  } catch (error) {
+    return;
+  }
 
   if (isArray(request.body)) {
     request.body = map(request.body, obfuscateRequestBody);
