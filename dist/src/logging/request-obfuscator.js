@@ -57,8 +57,14 @@ function obfuscateResponse(request, instance) {
     return;
   }
 
-  request.body = JSON.parse(request.body);
-  const requestBody = JSON.parse(instance.body);
+  let requestBody = null;
+
+  try {
+    request.body = JSON.parse(request.body);
+    requestBody = JSON.parse(instance.body);
+  } catch (error) {
+    return;
+  }
 
   if ((0, _lodash.isArray)(request.body)) {
     const methodsById = (0, _lodash.mapKeys)(requestBody, method => method.id);
@@ -105,7 +111,11 @@ function obfuscateRequest(request) {
     return;
   }
 
-  request.body = JSON.parse(request.body);
+  try {
+    request.body = JSON.parse(request.body);
+  } catch (error) {
+    return;
+  }
 
   if ((0, _lodash.isArray)(request.body)) {
     request.body = (0, _lodash.map)(request.body, obfuscateRequestBody);

@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -53,7 +52,7 @@ function obfuscateResponse(request, instance) {
 
   try {
     request.body = JSON.parse(request.body);
-    
+
     requestBody = JSON.parse(instance.body);
   } catch (error) {
     return;
